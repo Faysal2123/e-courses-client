@@ -3,8 +3,9 @@ import { Link } from "react-router-dom";
 
 const Navbar = () => {
   return (
-    <div>
-      <div className="navbar  bg-black/85 shadow-lg md:px-[60px] glass">
+   <div className="bg-black/85 glass">
+     <div className="md:w-11/12 mx-auto">
+      <div className="navbar  shadow-lg  ">
         <div className="navbar-start">
           <div className="dropdown text-white">
             <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -63,12 +64,13 @@ const Navbar = () => {
           </ul>
         </div>
         <div className="navbar-end gap-3">
-          <Link className="btn md:text-base">Sign Up</Link>
-          <Link className="btn bg-yellow-500 text-black font-bold md:text-base">Login</Link>
+          <Link className="btn md:text-base font-semibold">Sign Up</Link>
+          <Link className="btn bg-yellow-500 text-black font-semibold md:text-base border-yellow-500">Login</Link>
         
         </div>
       </div>
     </div>
+   </div>
   );
 };
 

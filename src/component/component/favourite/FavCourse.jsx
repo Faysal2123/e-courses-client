@@ -3,10 +3,10 @@ import { FaPaintBrush, FaCode, FaBullhorn, FaPenNib } from 'react-icons/fa';
 
 const FavCourse = () => {
     return (
-        <div className='bg-gray-100'>
+        <div className='bg-gray-50'>
             <div className='w-11/12 mx-auto py-10 '>
             <h1 className='text-3xl font-bold'>
-                <span className='border-b-4 border-yellow-500 pb-1 mr-1'>Pick</span> your fav 
+                <span className='border-b-4 border-yellow-500 pb-1 '>Pic</span>k your fav 
                 <span className='text-yellow-500'> course</span>
             </h1>
 

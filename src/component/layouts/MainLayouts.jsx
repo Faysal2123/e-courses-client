@@ -12,9 +12,7 @@ const MainLayouts = () => {
            <Navbar></Navbar> 
            <div><Outlet></Outlet></div>
            <Footer></Footer>
-           <PopularCourse></PopularCourse>
-           <ChooseUs></ChooseUs>
-           <Feedback></Feedback>
+          
         </div>
     );
 };

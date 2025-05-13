@@ -11,7 +11,7 @@ const PopularCourse = () => {
     }, []);
 
     return (
-        <div className="w-11/12 mx-auto py-10">
+        <div className="w-11/12 mx-auto py-10 ">
             <div>
                 <h1 className="text-3xl font-bold">
                     <span className="border-b-4 border-yellow-500 pb-1 ">Pop</span>ular

@@ -2,7 +2,7 @@ import React from 'react';
 
 const ChooseUs = () => {
     return (
-        <div className='bg-gray-50'>
+        <div className='bg-gray-50 '>
             <div className='w-11/12 mx-auto py-10'>
                 <div className='flex flex-col lg:flex-row items-center justify-evenly  gap-10'>
                     

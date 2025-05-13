@@ -13,25 +13,25 @@ const FavCourse = () => {
             <div className='grid grid-cols-2 md:grid-cols-2 lg:grid-cols-4  mt-10 gap-5 md:gap-0' >
                 {/* UX/UI Design */}
                 <div className='flex flex-col justify-center items-center gap-4 md:p-16  p-8 border rounded-xl md:shadow-xl shadow-md hover:shadow-lg transition-all duration-300 border-none bg-white'>
-                    <FaPaintBrush className='text-3xl ' />
+                    <FaPaintBrush className='text-3xl text-yellow-500' />
                     <h2 className='text-xl font-semibold text-center'>UX/UI Design</h2>
                 </div>
 
                 {/* Development */}
                 <div className='flex flex-col justify-center items-center gap-4 md:p-16 border rounded-xl md:shadow-xl shadow-md hover:shadow-lg transition-all duration-300 md:-ml-16 border-none  p-8 bg-white'>
-                    <FaCode className='text-3xl ' />
+                    <FaCode className='text-3xl text-yellow-500' />
                     <h2 className='text-xl font-semibold text-center'>Development</h2>
                 </div>
 
                 {/* Digital Marketing */}
                 <div className='flex flex-col justify-center items-center gap-4 md:p-16 border rounded-xl md:shadow-xl shadow-md hover:shadow-lg transition-all duration-300 border-none md:-ml-16 p-8 bg-white'>
-                    <FaBullhorn className='text-3xl ' />
+                    <FaBullhorn className='text-3xl text-yellow-500' />
                     <h2 className='text-xl font-semibold text-center'>Digital Marketing</h2>
                 </div>
 
                 {/* Content Writer */}
                 <div className='flex flex-col justify-center items-center gap-4 md:p-16 border rounded-xl md:shadow-xl shadow-md hover:shadow-lg transition-all duration-300 border-none md:-ml-16 p-8 bg-white'>
-                    <FaPenNib className='text-3xl ' />
+                    <FaPenNib className='text-3xl text-yellow-500' />
                     <h2 className='text-xl font-semibold text-center'>Content Writer</h2>
                 </div>
             </div>

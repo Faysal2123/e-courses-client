@@ -3,7 +3,8 @@ import Navbar from './Navbar';
 import Footer from './Footer';
 import { Outlet } from 'react-router-dom';
 import PopularCourse from '../component/Popular/PopularCourse';
-import ChooseUs from '../ChooseUs/ChooseUs';
+import ChooseUs from '../component/ChooseUs/ChooseUs';
+import Feedback from '../component/Feedback/Feedback';
 
 const MainLayouts = () => {
     return (
@@ -13,6 +14,7 @@ const MainLayouts = () => {
            <Footer></Footer>
            <PopularCourse></PopularCourse>
            <ChooseUs></ChooseUs>
+           <Feedback></Feedback>
         </div>
     );
 };

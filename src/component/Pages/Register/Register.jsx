@@ -1,10 +1,37 @@
 import Lottie from "lottie-react";
-import React from "react";
-import { Link } from "react-router-dom";
+import React, { useContext, useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
 import registerLogo from "../../../../public/lottie/Animation2.json";
 import { FcGoogle } from "react-icons/fc";
+import { AuthContext } from "../../Provider/AuthProvider";
+import toast, { Toaster } from "react-hot-toast";
 
 const Register = () => {
+  const {user,setUser,createUser,updateUserProfile}=useContext(AuthContext)
+  const navigate=useNavigate()
+  const handleSubmit=async (e)=>{
+    e.preventDefault(e)
+    const form=e.target;
+    const name=form.name.value;
+    const email=form.email.value;
+    const password=form.password.value;
+    const photo=form.photo.value;
+    console.log({name,email,password,photo})
+    try{
+      const result=await createUser(email,password)
+      await updateUserProfile(name,photo)
+      setUser({...result.user,displayName:name,photoURL:photo})
+      toast.success("Registration Successful") 
+      setTimeout(()=>{
+         navigate("/")
+      },1000)
+    }
+    catch(error){
+      console.log(error)
+      toast.error("Registration Failed")
+    }
+    
+  }
   return (
     <div className="min-h-[680px] flex items-center justify-center bg-gray-50 px-4">
       <div className="flex flex-col lg:flex-row bg-white shadow-2xl rounded-2xl overflow-hidden max-w-5xl w-full">
@@ -19,7 +46,7 @@ const Register = () => {
           <h2 className="text-3xl font-bold text-center mb-6 text-gray-800">
             REGISTER NOW
           </h2>
-          <form className="space-y-4">
+          <form className="space-y-4" onSubmit={handleSubmit}>
             <div>
               <label className="block text-sm font-medium mb-1">Name</label>
               <input
@@ -89,6 +116,7 @@ const Register = () => {
           </form>
         </div>
       </div>
+      <Toaster></Toaster>
     </div>
   );
 };

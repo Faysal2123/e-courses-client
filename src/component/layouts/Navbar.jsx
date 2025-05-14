@@ -30,17 +30,17 @@ const Navbar = () => {
               className="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow text-base text-white"
             >
              <li>
-              <a>Home</a>
+              <Link to='/'>Home</Link>
             </li>
            
             <li>
-              <a>Course</a>
+              <Link to='/course'>Course</Link>
             </li>
             <li>
-              <a>About us</a>
+              <Link to='/about'>About us</Link>
             </li>
             <li>
-              <a>Contact</a>
+              <Link to='/contact'>Contact</Link>
             </li>
             </ul>
           </div>
@@ -49,23 +49,23 @@ const Navbar = () => {
         <div className="navbar-center hidden lg:flex">
           <ul className="menu menu-horizontal px-1 text-base font-semibold text-white">
             <li>
-              <a>Home</a>
+              <Link to='/'>Home</Link>
             </li>
            
             <li>
-              <a>Course</a>
+               <Link to='/course'>Course</Link>
             </li>
             <li>
-              <a>About us</a>
+              <Link to='/about'>About us</Link>
             </li>
             <li>
-              <a>Contact</a>
+              <Link to='/contact'>Contact</Link>
             </li>
           </ul>
         </div>
         <div className="navbar-end gap-3">
-          <Link className="btn md:text-base font-semibold">Sign Up</Link>
-          <Link className="btn bg-yellow-500 text-black font-semibold md:text-base border-yellow-500">Login</Link>
+          <Link to='/register' className="btn md:text-base font-semibold">Sign Up</Link>
+          <Link to='/login' className="btn bg-yellow-500 text-black font-semibold md:text-base border-yellow-500">Login</Link>
         
         </div>
       </div>

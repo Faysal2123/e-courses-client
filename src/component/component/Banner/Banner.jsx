@@ -1,5 +1,6 @@
 import React from "react";
 import { FaLongArrowAltRight } from "react-icons/fa";
+import { Link } from "react-router-dom";
 
 const Banner = () => {
   return (
@@ -13,7 +14,7 @@ const Banner = () => {
         Where knowledge meets innovation. Join our community of passionate learners and unlock your potential.
       </p>
       <div className="mt-5 flex justify-center md:justify-start">
-        <button className="btn bg-yellow-500 text-lg py-3 gap-3 flex items-center justify-center border border-yellow-500">Learn More <span><FaLongArrowAltRight /></span></button>
+        <Link to='/course' className="btn bg-yellow-500 text-lg py-3 gap-3 flex items-center justify-center border border-yellow-500">Learn More <span><FaLongArrowAltRight /></span></Link>
       </div>
     </div>
   

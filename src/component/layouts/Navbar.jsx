@@ -50,6 +50,9 @@ const Navbar = () => {
                 <li>
                   <Link to="/contact">Contact</Link>
                 </li>
+                <li>
+                  <Link to="/dashboard">Dashboard</Link>
+                </li>
               </ul>
             </div>
             <a className=" md:text-3xl text-2xl font-extrabold text-white">
@@ -71,6 +74,13 @@ const Navbar = () => {
               <li>
                 <Link to="/contact">Contact</Link>
               </li>
+               <div>
+                {user && <>
+                <li>
+                  <Link to="/dashboard">Dashboard</Link>
+                </li>
+                </>}
+               </div>
             </ul>
           </div>
           <div className="navbar-end gap-3">

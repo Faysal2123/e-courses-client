@@ -5,40 +5,50 @@ import registerLogo from "../../../../public/lottie/Animation2.json";
 import { FcGoogle } from "react-icons/fc";
 import { AuthContext } from "../../Provider/AuthProvider";
 import toast, { Toaster } from "react-hot-toast";
+import useAxiosPublic from "../../component/Hook/useAxiosPublic";
 
 const Register = () => {
-  const {user,setUser,createUser,updateUserProfile}=useContext(AuthContext)
-  const navigate=useNavigate()
-  const handleSubmit=async (e)=>{
-    e.preventDefault(e)
-    const form=e.target;
-    const name=form.name.value;
-    const email=form.email.value;
-    const password=form.password.value;
-    const photo=form.photo.value;
-    console.log({name,email,password,photo})
-    try{
-      const result=await createUser(email,password)
-      await updateUserProfile(name,photo)
-      setUser({...result.user,displayName:name,photoURL:photo})
-      toast.success("Registration Successful") 
-      setTimeout(()=>{
-         navigate("/")
-      },1000)
+  const { user, setUser, createUser, updateUserProfile } =
+    useContext(AuthContext);
+  const axiosPublic = useAxiosPublic();
+  const navigate = useNavigate();
+  const handleSubmit = async (e) => {
+    e.preventDefault(e);
+    const form = e.target;
+    const name = form.name.value;
+    const email = form.email.value;
+    const password = form.password.value;
+    const photo = form.photo.value;
+    const role =form.role.value;
+    console.log({ name, email, password, photo ,role});
+    try {
+      const result = await createUser(email, password);
+      await updateUserProfile(name, photo);
+      setUser({ ...result.user, displayName: name, photoURL: photo });
+      await axiosPublic.post("/users", {
+        name,
+        email,
+        photo,
+        role
+      });
+      toast.success("Registration Successful");
+      setTimeout(() => {
+        navigate("/");
+      }, 1000);
+    } catch (error) {
+      console.log(error);
+      toast.error("Registration Failed");
     }
-    catch(error){
-      console.log(error)
-      toast.error("Registration Failed")
-    }
-    
-  }
+  };
   return (
     <div className="min-h-[680px] flex items-center justify-center bg-gray-50 px-4">
       <div className="flex flex-col lg:flex-row bg-white shadow-2xl rounded-2xl overflow-hidden max-w-5xl w-full">
-        
         {/* Lottie Animation */}
         <div className="lg:w-1/2 flex items-center justify-center bg-gray-50 p-10">
-          <Lottie animationData={registerLogo} className="md:w-96 md:h-96 w-40 h-40" />
+          <Lottie
+            animationData={registerLogo}
+            className="md:w-96 md:h-96 w-40 h-40"
+          />
         </div>
 
         {/* Register Form */}
@@ -78,7 +88,25 @@ const Register = () => {
               />
             </div>
             <div>
-              <label className="block text-sm font-medium mb-1">Photo URL</label>
+              <label className="block text-sm font-medium mb-1">
+                User Role
+              </label>
+              <select
+                name="role"
+                className="select select-bordered w-full"
+                required
+              >
+                <option value="">Select Role</option>
+                <option value="student">Student</option>
+                <option value="tutor">Tutor</option>
+                <option value="admin">Admin</option>
+              </select>
+            </div>
+
+            <div>
+              <label className="block text-sm font-medium mb-1">
+                Photo URL
+              </label>
               <input
                 name="photo"
                 type="url"

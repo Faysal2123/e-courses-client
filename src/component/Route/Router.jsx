@@ -8,6 +8,7 @@ import Contact from "../Pages/Contact/Contact";
 import Register from "../Pages/Register/Register";
 import Login from "../Pages/Login/Login";
 import DashboardLayout from "../layouts/DashboardLayout";
+import SessionDetails from "../component/Popular/SessionDetails";
 const router = createBrowserRouter([
   {
     path: "/",
@@ -20,6 +21,12 @@ const router = createBrowserRouter([
       {
         path:'/course',
         element:<Course></Course>
+      },
+      {
+        path:'/sessionDetails/:id',
+        element:<SessionDetails></SessionDetails>,
+        loader: ({ params }) =>
+          fetch(`http://localhost:5000/courseDetails/${params.id}`),
       },
       {
         path:'/about',

@@ -51,13 +51,7 @@ const SideBar = () => {
     <>
       {/* Mobile topbar */}
       <div className="bg-white p-4 shadow-md flex items-center justify-between md:hidden">
-        <Link to="/">
-          <img
-            src="https://i.ibb.co.com/K1PJGfx/restaurant.png"
-            alt="logo"
-            className="w-10 h-10"
-          />
-        </Link>
+        
         <button
           onClick={handleToggle}
           className="text-gray-600 hover:text-black"
@@ -74,13 +68,7 @@ const SideBar = () => {
       >
         {/* Logo */}
         <div className="flex items-center justify-center mb-6">
-          <Link to="/">
-            <img
-              src="https://i.ibb.co.com/K1PJGfx/restaurant.png"
-              alt="logo"
-              className="w-16 h-16"
-            />
-          </Link>
+         
         </div>
 
         {/* Role Title */}

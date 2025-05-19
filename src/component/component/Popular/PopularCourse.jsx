@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
 
 const PopularCourse = () => {
     const [session, setSession] = useState([]);
@@ -30,7 +31,7 @@ const PopularCourse = () => {
                                     <p className="text-gray-500 text-sm">Tutor: {course.tutor_name}</p>
                                     <p className="text-gray-500 text-sm">Rating: {course.average_rating}</p>
                                 </div>
-                                <button className="bg-yellow-500 text-white py-2 px-4 rounded-md">View Details</button>
+                                <Link to={`/sessionDetails/${course._id}`} className="bg-yellow-500 text-white py-2 px-4 rounded-md">View Details</Link>
                             </div>
                         </div>
                     </div>

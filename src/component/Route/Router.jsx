@@ -9,6 +9,10 @@ import Register from "../Pages/Register/Register";
 import Login from "../Pages/Login/Login";
 import DashboardLayout from "../layouts/DashboardLayout";
 import SessionDetails from "../component/Popular/SessionDetails";
+import ViewAllMaterial from "../Dashboard/Owner/ViewAllMaterial";
+import BookedSession from "../Dashboard/Student/BookedSession";
+import CreateNote from "../Dashboard/Student/CreateNote";
+import PersonalNote from "../Dashboard/Student/PersonalNote";
 const router = createBrowserRouter([
   {
     path: "/",
@@ -51,9 +55,23 @@ const router = createBrowserRouter([
     path:'/dashboard',
     element:<DashboardLayout></DashboardLayout>,
     children:[
+      //  {
+      //   path:'viewMaterials',
+      //   element:<ViewAllMaterial></ViewAllMaterial>
+      // },
       {
+        path:'viewBooked',
+        element:<BookedSession></BookedSession>
+      },
+      {
+        path:'createNote',
+        element:<CreateNote></CreateNote>
+      },
+      {
+        path:'manageNotes',
+        element:<PersonalNote></PersonalNote>
+      },
 
-      }
     ]
   }
 ]);

@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
 
 const Course = () => {
     const [courses, setCourses] = useState([]);
@@ -34,12 +35,12 @@ const Course = () => {
                                 <p className="text-sm font-semibold text-green-500">
                                     {course.registration_fee === 0 ? "Free" : `$${course.registration_fee}`}
                                 </p>
-                                <button
-                                    onClick={() => window.open(course.google_drive_link, '_blank')}
+                                <Link to={`/sessionDetails/${course._id}`}
+                                  
                                     className="text-sm text-white bg-yellow-500 hover:bg-yellow-600 py-2 px-4 rounded-md"
                                 >
                                     View Materials
-                                </button>
+                                </Link>
                             </div>
                         </div>
                     </div>

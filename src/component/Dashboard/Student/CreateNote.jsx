@@ -2,15 +2,16 @@ import React, { useContext, useState } from "react";
 import { AuthContext } from "../../Provider/AuthProvider";
 import useAxiosPublic from "../../component/Hook/useAxiosPublic";
 import { useNavigate } from "react-router-dom";
-import toast from "react-hot-toast";
+import toast, { Toaster } from "react-hot-toast";
 
 const CreateNote = () => {
   const { user } = useContext(AuthContext);
   const axiosPublic = useAxiosPublic();
-  const [title, subTitle] = useState("");
+  const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
   const navigate = useNavigate();
-  const handleSubmit = async (e) => {
+
+  const handleSubmit = async (e) =>  {
     e.preventDefault();
     const noteData = {
       title,
@@ -19,13 +20,19 @@ const CreateNote = () => {
     };
     try {
       await axiosPublic.post("/note", noteData);
+      setTimeout(()=>{
+
+        navigate("/manageNotes");
+      },1000)
       toast.success("Note created successfully");
-      navigate("/dashboard");
+      setTitle(""); // Reset input
+      setDescription(""); // Reset input
     } catch (error) {
       console.error("Error creating note:", error);
       toast.error("Failed to create note");
     }
   };
+
   return (
     <div className="max-w-4xl mx-auto p-6 bg-white rounded-lg shadow-lg">
       <h2 className="text-3xl font-semibold text-center mb-6 text-gray-800">
@@ -81,6 +88,7 @@ const CreateNote = () => {
           </button>
         </div>
       </form>
+      <Toaster></Toaster>
     </div>
   );
 };

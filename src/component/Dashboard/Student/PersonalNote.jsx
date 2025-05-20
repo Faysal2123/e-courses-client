@@ -3,6 +3,7 @@ import { AuthContext } from '../../Provider/AuthProvider';
 import useAxiosPublic from '../../component/Hook/useAxiosPublic';
 import Swal from 'sweetalert2';
 import { Toaster } from 'react-hot-toast';
+import { Link } from 'react-router-dom';
 
 const PersonalNote = () => {
      const { user, loading } = useContext(AuthContext);

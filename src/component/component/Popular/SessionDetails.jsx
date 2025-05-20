@@ -83,7 +83,7 @@ const SessionDetails = () => {
           icon: "success",
           confirmButtonText: "OK",
         });
-        return navigate("/dashboard");
+        return navigate("/dashboard/viewBooked");
       }
     } catch {
       Swal.fire({

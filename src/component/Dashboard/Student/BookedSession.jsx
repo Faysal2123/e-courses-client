@@ -1,5 +1,6 @@
 import React, { useContext, useEffect, useState } from 'react';
 import { AuthContext } from '../../Provider/AuthProvider';
+import { Link } from 'react-router-dom';
 
 
 const BookedSession = () => {
@@ -10,7 +11,7 @@ const BookedSession = () => {
        if(user?.email){
          fetch(`http://localhost:5000/bookedSession/${user?.email}`)
          .then(res=>res.json())
-        .then(data=>{
+         .then(data=>{
             setSession(data)
             setIsLoading(false)
         })
@@ -49,7 +50,7 @@ const BookedSession = () => {
                             {new Date(session.createdAt).toLocaleString()}
                         </p>
                         <Link
-                            to={`/dashboard/studentSessionDetails/${session._id}`}
+                            to={`/sessionDetails/${session._id}`}
                             className="bg-yellow-500 text-white px-4 py-2 rounded hover:bg-yellow-600 transition"
                         >
                             View Details

@@ -15,6 +15,7 @@ import CreateNote from "../Dashboard/Student/CreateNote";
 import PersonalNote from "../Dashboard/Student/PersonalNote";
 import ViewMaterial from "../Dashboard/Student/ViewMaterial";
 import UpdateNote from "../Dashboard/Student/UpdateNote";
+import CreateStudySession from "../Dashboard/Tutor/CreateStudySession";
 const router = createBrowserRouter([
   {
     path: "/",
@@ -80,6 +81,10 @@ const router = createBrowserRouter([
       {
         path:'updateNote/:id',
         element:<UpdateNote></UpdateNote>
+      },
+      {
+        path:'createSession',
+        element:<CreateStudySession></CreateStudySession>
       }
 
     ]

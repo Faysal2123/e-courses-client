@@ -16,6 +16,10 @@ import PersonalNote from "../Dashboard/Student/PersonalNote";
 import ViewMaterial from "../Dashboard/Student/ViewMaterial";
 import UpdateNote from "../Dashboard/Student/UpdateNote";
 import CreateStudySession from "../Dashboard/Tutor/CreateStudySession";
+import StudyMaterials from "../Dashboard/Tutor/StudyMaterials";
+import UpdateMaterials from "../Dashboard/Tutor/UploadMaterials";
+import UploadMaterials from "../Dashboard/Tutor/UploadMaterials";
+import ViewAllCreateSession from "../Dashboard/Tutor/ViewAllCreateSession";
 const router = createBrowserRouter([
   {
     path: "/",
@@ -85,6 +89,22 @@ const router = createBrowserRouter([
       {
         path:'createSession',
         element:<CreateStudySession></CreateStudySession>
+      },
+      {
+        path:'viewSessions',
+        element:<ViewAllCreateSession></ViewAllCreateSession>
+      },
+      {
+        path:'uploadMaterials',
+        element:<UploadMaterials></UploadMaterials>
+      },
+      {
+        path:'studyMaterials',
+        element:<StudyMaterials></StudyMaterials>
+      },
+      {
+        path:'updateMaterials/:id',
+        element:<UpdateMaterials></UpdateMaterials>
       }
 
     ]

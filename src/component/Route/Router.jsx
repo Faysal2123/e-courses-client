@@ -20,6 +20,7 @@ import StudyMaterials from "../Dashboard/Tutor/StudyMaterials";
 import UpdateMaterials from "../Dashboard/Tutor/UploadMaterials";
 import UploadMaterials from "../Dashboard/Tutor/UploadMaterials";
 import ViewAllCreateSession from "../Dashboard/Tutor/ViewAllCreateSession";
+import ViewAllStudents from "../Dashboard/Owner/ViewAllStudents";
 const router = createBrowserRouter([
   {
     path: "/",
@@ -105,6 +106,10 @@ const router = createBrowserRouter([
       {
         path:'updateMaterials/:id',
         element:<UpdateMaterials></UpdateMaterials>
+      },
+      {
+        path:'allUsers',
+        element:<ViewAllStudents></ViewAllStudents>
       }
 
     ]

@@ -73,9 +73,7 @@ const ViewAllStudents = () => {
       if (!res.ok) {
         throw new Error("Role update failed");
       }
-
       const updatedUser = await res.json();
-
       setUsers((prevUsers) =>
         prevUsers.map((user) =>
           user._id === updatedUser._id ? updatedUser : user

@@ -10,7 +10,7 @@ const ViewAllMaterial = () => {
      useEffect(()=>{
         const fetchMaterials =async ()=>{
            try{
-            const res = await axiosPublic.get(`/material/${user.email}`)
+            const res = await axiosPublic.get(`/materials`)
             setMaterials(res.data)
            }
            catch(error){
@@ -31,7 +31,7 @@ const ViewAllMaterial = () => {
 }).then(async(result) => {
   if (result.isConfirmed) {
    try{
-    await axiosPublic.delete(`/material/${id}`)
+    await axiosPublic.delete(`/materials/${id}`)
     setMaterials(materials.filter((material)=> material._id !== id))
     Swal.fire('Deleted!', 'The material has been deleted.', 'success');
    }

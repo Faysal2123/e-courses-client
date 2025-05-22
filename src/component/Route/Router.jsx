@@ -115,6 +115,10 @@ const router = createBrowserRouter([
       {
         path:'allStudySession',
         element:<ViewAllStudySession></ViewAllStudySession>
+      },
+      {
+        path:'allMaterials',
+        element:<ViewAllMaterial></ViewAllMaterial>
       }
 
     ]

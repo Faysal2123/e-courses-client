@@ -12,6 +12,7 @@ import { FiSettings } from "react-icons/fi";
 
 import { AuthContext } from "../../../Provider/AuthProvider";
 import useRole from "../../../component/Hook/useRole";
+import { IoHome } from "react-icons/io5";
 
 const SideBar = () => {
   const { logOut } = useContext(AuthContext);
@@ -92,6 +93,10 @@ const SideBar = () => {
 
         {/* Bottom actions */}
         <div className="mt-10 border-t pt-4 space-y-2">
+          <Link to='/' className="w-full flex items-center gap-3 px-4 py-2 rounded-lg text-sm text-gray-600 hover:bg-gray-100 transition">
+            <IoHome size={18}/>  
+            Home
+          </Link>
           <button className="w-full flex items-center gap-3 px-4 py-2 rounded-lg text-sm text-gray-600 hover:bg-gray-100 transition">
             <FiSettings size={18} />
             Settings

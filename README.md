@@ -107,8 +107,8 @@ e-courses-client/
 ---
 
 ## 🔗 Links
-- **Live Demo:** https://fir-project-b7c55.web.app/(#)  
-- **Backend API:** https://github.com/Faysal2123/e-course-server(#)  
+- **Live Demo:** https://fir-project-b7c55.web.app/  
+- **Backend API:** https://github.com/Faysal2123/e-course-server 
 
 ---
 

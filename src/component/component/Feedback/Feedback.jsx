@@ -5,7 +5,7 @@ const Feedback = () => {
     const [feedback, setFeedback] = useState([]);
 
     useEffect(() => {
-        fetch('http://localhost:5000/reviews')
+        fetch('https://e-courses-server-gamma.vercel.app/reviews')
             .then(res => res.json())
             .then(data => setFeedback(data));
     }, []);

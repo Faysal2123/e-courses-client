@@ -7,7 +7,7 @@ const ViewMaterial = () => {
     const [isLoading,setIsLoading]=useState(true)
     useEffect(()=>{
         if(user?.email){
-            fetch(`http://localhost:5000/booked/${user?.email}`)
+            fetch(`https://e-courses-server-gamma.vercel.app/booked/${user?.email}`)
             .then(res=>res.json())
             .then(data=>{
                 setSessions(data)

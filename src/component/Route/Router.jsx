@@ -39,7 +39,7 @@ const router = createBrowserRouter([
         path:'/sessionDetails/:id',
         element:<SessionDetails></SessionDetails>,
         loader: ({ params }) =>
-          fetch(`http://localhost:5000/courseDetails/${params.id}`),
+          fetch(`https://e-courses-server-gamma.vercel.app/courseDetails/${params.id}`),
       },
       {
         path:'/about',

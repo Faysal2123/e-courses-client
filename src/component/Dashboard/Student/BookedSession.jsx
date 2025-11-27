@@ -9,7 +9,7 @@ const BookedSession = () => {
     const [isLoading,setIsLoading]=useState(true)
      useEffect(()=>{
        if(user?.email){
-         fetch(`http://localhost:5000/bookedSession/${user?.email}`)
+         fetch(`https://e-courses-server-gamma.vercel.app/bookedSession/${user?.email}`)
          .then(res=>res.json())
          .then(data=>{
             setSession(data)

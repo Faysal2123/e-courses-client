@@ -18,7 +18,7 @@ const ViewAllStudents = () => {
   useEffect(() => {
     const fetchUsers = async () => {
       try {
-        const res = await fetch(`http://localhost:5000/users?search=${searchTerm}`);
+        const res = await fetch(`https://e-courses-server-gamma.vercel.app/users?search=${searchTerm}`);
         const data = await res.json();
         setUsers(data);
       } catch (error) {
@@ -62,7 +62,7 @@ const ViewAllStudents = () => {
     }
 
     try {
-      const res = await fetch(`http://localhost:5000/users/${selectedUser._id}`, {
+      const res = await fetch(`https://e-courses-server-gamma.vercel.app/users/${selectedUser._id}`, {
         method: "PATCH",
         headers: {
           "Content-Type": "application/json",

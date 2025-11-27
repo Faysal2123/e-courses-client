@@ -5,7 +5,7 @@ const PopularCourse = () => {
     const [session, setSession] = useState([]);
     
     useEffect(() => {
-        fetch('http://localhost:5000/course')
+        fetch('https://e-courses-server-gamma.vercel.app/course')
             .then(res => res.json())
             .then(data => setSession(data.slice(0,8)))
               .catch(error => console.error('Error fetching data: ', error));
